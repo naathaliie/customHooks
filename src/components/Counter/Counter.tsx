@@ -34,11 +34,9 @@ const Counter = ({ values }: CounterProps) => {
       <h5>
         Ett jämt värde kommer att vara{" "}
         <span style={{ color: "hotpink" }}>ROSA</span> och ojämt värde kommer
-        att vara <span style={{ color: "blueviolet" }}>BLÅTT</span>
+        att vara <span style={{ color: "blue" }}>BLÅTT</span>
       </h5>
-      <p style={isEven() ? { color: "hotpink" } : { color: "blueviolet" }}>
-        {count}
-      </p>
+      <p style={isEven() ? { color: "hotpink" } : { color: "blue" }}>{count}</p>
       <button
         onClick={() => {
           decreaseCount();
@@ -73,14 +71,14 @@ const Counter = ({ values }: CounterProps) => {
           stepValueUp();
         }}
       >
-        +step
+        öka med {values.stepValue}
       </button>
       <button
         onClick={() => {
           stepDownValue();
         }}
       >
-        -step
+        minska med {values.stepValue}
       </button>
     </div>
   );
