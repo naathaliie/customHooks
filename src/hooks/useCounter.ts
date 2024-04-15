@@ -8,19 +8,19 @@ export const useCounter = (startValue:number, maxValue:number, minValue:number, 
     const [count, setCount] = useState<number>(startValue);
 
     
-    const increaseCount = ():void => {
-        if (count + 1 > maxValue) {
+    const increaseCount = (x:number):void => {
+        if (count + x > maxValue) {
             alert("Maxvärdet uppnått");
         } else{
-        return setCount(count +1);
+        return setCount(count + x);
     }
     };
 
-    const decreaseCount = ():void => {
-        if (count - 1 < minValue) {
+    const decreaseCount = (x:number):void => {
+        if (count - x < minValue) {
             alert("Minsta värdet uppnått");
         } else{
-        return setCount(count - 1);
+        return setCount(count - x);
     }
     };
 
@@ -36,22 +36,9 @@ export const useCounter = (startValue:number, maxValue:number, minValue:number, 
         }
     };
 
-    const stepValueUp = ():void => {
-        if (count + stepValue > maxValue) {
-            alert("Maxvärdet uppnått");
-        } else{
-        return setCount(count + stepValue);
-    }
-    };
+   
 
-    const stepDownValue = ():void => {
-        if (count - stepValue < minValue) {
-            alert("Minsta värdet uppnått");
-        } else{
-            setCount(count - stepValue);
-        }
-    };
 
     //returnerar ett objekt av count och increaseCount
-    return {count, setCount, increaseCount, decreaseCount, resetCount, minValue, maxValue, isEven, stepValueUp, stepDownValue}
+    return {count, setCount, increaseCount, decreaseCount, resetCount, minValue, maxValue, isEven}
 };

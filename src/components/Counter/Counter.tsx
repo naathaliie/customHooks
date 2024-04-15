@@ -16,8 +16,6 @@ const Counter = ({ values }: CounterProps) => {
     maxValue,
     minValue,
     isEven,
-    stepValueUp,
-    stepDownValue,
   } = useCounter(
     values.startValue,
     values.highestValue,
@@ -39,12 +37,18 @@ const Counter = ({ values }: CounterProps) => {
       <p style={isEven() ? { color: "hotpink" } : { color: "blue" }}>{count}</p>
       <button
         onClick={() => {
-          decreaseCount();
+          decreaseCount(1);
         }}
       >
         -
       </button>
-      <button onClick={() => increaseCount()}>+</button>
+      <button
+        onClick={() => {
+          increaseCount(1);
+        }}
+      >
+        +
+      </button>
       <button
         onClick={() => {
           resetCount();
@@ -68,17 +72,17 @@ const Counter = ({ values }: CounterProps) => {
       </button>
       <button
         onClick={() => {
-          stepValueUp();
+          increaseCount(values.stepValue);
         }}
       >
         öka med {values.stepValue}
       </button>
       <button
         onClick={() => {
-          stepDownValue();
+          decreaseCount(values.stepValue);
         }}
       >
-        minska med {values.stepValue}
+        minska med{values.stepValue}
       </button>
     </div>
   );
