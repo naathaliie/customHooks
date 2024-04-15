@@ -1,58 +1,34 @@
 import "./App.css";
-import { useCounter } from "./hooks/useCounter";
+import Counter from "./components/Counter/Counter";
+import { CounterType } from "./components/Counter/CounterState";
+
+const firstObj: CounterType = {
+  startValue: 2,
+  highestValue: 15,
+  lowestValue: -10,
+  stepValue: 5,
+};
+
+const secoundObj: CounterType = {
+  startValue: 0,
+  highestValue: 100,
+  lowestValue: 0,
+  stepValue: 10,
+};
+
+const thirddObj: CounterType = {
+  startValue: 10,
+  highestValue: 300,
+  lowestValue: -100,
+  stepValue: 50,
+};
 
 function App() {
-  const {
-    count,
-    setCount,
-    increaseCount,
-    decreaseCount,
-    resetCount,
-    minValue,
-    maxValue,
-    isEven,
-  } = useCounter(5, 15, -10);
-
   return (
     <>
-      <h5>Maxvärdet är 15 och minsta värdet är -10</h5>
-      <h5>
-        Ett jämt värde kommer att vara{" "}
-        <span style={{ color: "hotpink" }}>ROSA</span> och ojämt värde kommer
-        att vara <span style={{ color: "blueviolet" }}>BLÅTT</span>
-      </h5>
-      <p style={isEven() ? { color: "hotpink" } : { color: "blueviolet" }}>
-        {count}
-      </p>
-      <button
-        onClick={() => {
-          decreaseCount();
-        }}
-      >
-        -
-      </button>
-      <button onClick={() => increaseCount()}>+</button>
-      <button
-        onClick={() => {
-          resetCount();
-        }}
-      >
-        reset
-      </button>
-      <button
-        onClick={() => {
-          setCount(minValue);
-        }}
-      >
-        Minsta värdet
-      </button>
-      <button
-        onClick={() => {
-          setCount(maxValue);
-        }}
-      >
-        Högsta värdet
-      </button>
+      <Counter values={firstObj} />
+      <Counter values={secoundObj} />
+      <Counter values={thirddObj} />
     </>
   );
 }
