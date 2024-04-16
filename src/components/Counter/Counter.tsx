@@ -26,7 +26,6 @@ const Counter = ({ values }: CounterProps) => {
 
   return (
     <div className="Counter">
-      <MyButton buttonObj={{ text: "klicka mig", aFunction: increaseCount }} />
       <h5>
         Maxvärdet är {values.highestValue} och minsta värdet är{" "}
         {values.lowestValue}
