@@ -1,6 +1,7 @@
 import "./App.css";
 import Counter from "./components/Counter/Counter";
 import { CounterType } from "./components/Counter/CounterState";
+import ToggleBtn from "./components/ToggleBtn/ToggleBtn";
 
 const firstObj: CounterType = {
   startValue: 2,
@@ -26,6 +27,7 @@ const thirddObj: CounterType = {
 function App() {
   return (
     <>
+      <ToggleBtn />
       <Counter values={firstObj} />
       <Counter values={secoundObj} />
       <Counter values={thirddObj} />
