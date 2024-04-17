@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { oneSwCaracterZ } from "../components/ShowFromAPI/SwTypes";
 
-export const useFetch = (API:string) => {
-const [theData, setTheData] = useState<oneSwCaracterZ[]>([]);
+//<T> är den datatyp som jag från showFromAPIBOX säger åt useFetch att vara
+export const useFetch = <T>(API:string) => {
+const [theData, setTheData] = useState<T[]>([]);
 
     useEffect(() => {
         
@@ -30,7 +30,7 @@ const [theData, setTheData] = useState<oneSwCaracterZ[]>([]);
         return () => {
           ignore = true; // Markera att komponenten har avmonterats
         };
-      }, []); //Kan lämnas tom då useEffect endast skall köras en gång
+      }, []); //Kan lämnas tom OM useEffect endast skall köras en gång te.x när du hämtar från ett API en gång
 
      
       return {theData}
