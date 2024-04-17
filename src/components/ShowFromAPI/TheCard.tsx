@@ -8,12 +8,31 @@ type TheCardProps = {
 const TheCard = ({ oneSw }: TheCardProps) => {
   console.log("Inne i showFromAPICard", oneSw);
   return (
-    <div className="ShowFromAPICARD">
-      <h5>Kort fakta om {oneSw.name}</h5>
-      <p>Födelsedag: {oneSw.birth_year}</p>
-      <p>Ögonfärg: {oneSw.eye_color}</p>
-      <p>Hårfärg: {oneSw.hair_color}</p>
-      <p>Male/Female? {oneSw.gender}</p>
+    <div className="TheCard">
+      <h5>{oneSw.name ? `Fakta om ${oneSw.name}` : "Fakta"}</h5>
+      <p>
+        {oneSw.birth_year !== "unknown" && oneSw.birth_year !== "n/a"
+          ? `Born:  ${oneSw.birth_year}`
+          : "Born: unknown"}
+      </p>
+      <p>
+        {oneSw.eye_color !== "unknown" && oneSw.eye_color !== "n/a"
+          ? `Eye color:  ${oneSw.eye_color}`
+          : "Eye color: unknown"}
+      </p>
+      <p>
+        {oneSw.hair_color !== "unknown" && oneSw.hair_color !== "n/a"
+          ? `Haircolor:  ${oneSw.hair_color}`
+          : "Haircolor: unknown"}
+      </p>
+      <p>
+        kön:
+        {oneSw.gender === "female"
+          ? " Female"
+          : oneSw.gender === "male"
+          ? " Male"
+          : " unknown"}
+      </p>
     </div>
   );
 };
