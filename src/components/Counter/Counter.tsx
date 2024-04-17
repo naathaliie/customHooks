@@ -1,5 +1,4 @@
 import { useCounter } from "../../hooks/useCounter";
-import MyButton from "../MyButton/MyButton";
 import "./Counter.scss";
 import { CounterType } from "./CounterState";
 

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-//<T> är den datatyp som jag från showFromAPIBOX säger åt useFetch att vara
+//<T> är den datatyp som jag från TheCard säger åt useFetch att vara
 export const useFetch = <T>(API:string) => {
 const [theData, setTheData] = useState<T[]>([]);
 

@@ -1,11 +1,11 @@
-import "./ShowFromAPICARD.scss";
+import "./TheCard.scss";
 import { oneSwCaracterZ } from "./SwTypes";
 
-type ShowFromAPICARDProps = {
+type TheCardProps = {
   oneSw: oneSwCaracterZ;
 };
 
-const ShowFromAPICARD = ({ oneSw }: ShowFromAPICARDProps) => {
+const TheCard = ({ oneSw }: TheCardProps) => {
   console.log("Inne i showFromAPICard", oneSw);
   return (
     <div className="ShowFromAPICARD">
@@ -18,4 +18,4 @@ const ShowFromAPICARD = ({ oneSw }: ShowFromAPICARDProps) => {
   );
 };
 
-export default ShowFromAPICARD;
+export default TheCard;
